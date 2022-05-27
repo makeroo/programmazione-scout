@@ -1,30 +1,87 @@
 <script lang="ts">
-	export let name: string;
+	import LayoutGrid, { Cell } from "@smui/layout-grid";
+	import FaCircle from "svelte-icons/fa/FaCircle.svelte";
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<div>
+	<LayoutGrid>
+		<Cell span={1}>
+			<div class="right spacer">&nbsp;</div>
+		</Cell>
+		<Cell span={2}>
+			<div class="peg-area">
+				<div class="icon peg-senso-civico"><FaCircle /></div>
+				<span class="peg-title">Senso civico</span>
+			</div>
+		</Cell>
+		<Cell span={2}>
+			<div class="peg-area">
+				<div class="icon peg-corporeita"><FaCircle /></div>
+				<span class="peg-title">Corporeità</span>
+			</div>
+		</Cell>
+		<Cell span={2}>
+			<div class="peg-area">
+				<div class="icon peg-creativita"><FaCircle /></div>
+				<span class="peg-title">Creatività</span>
+			</div>
+		</Cell>
+		<Cell span={2}>
+			<div class="peg-area">
+				<div class="icon peg-carattere"><FaCircle /></div>
+				<span class="peg-title">Carattere</span>
+			</div>
+		</Cell>
+		<Cell span={2}>
+			<div class="peg-area">
+				<div class="icon peg-spiritualita"><FaCircle /></div>
+				<span class="peg-title">Spiritualità</span>
+			</div>
+		</Cell>
+		<Cell span={1}>
+			<div class="right spacer">&nbsp;</div>
+		</Cell>
+	</LayoutGrid>
+</div>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+	.peg-area {
+		display: flex;
+		justify-content: center;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	.spacer {
+		display: flex;
+		justify-content: center;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	.icon {
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+	}
+
+	.peg-senso-civico {
+		color: #ffa8b0;
+	}
+
+	.peg-corporeita {
+		color: #99ff99;
+	}
+
+	.peg-creativita {
+		color: #fffa8a;
+	}
+
+	.peg-carattere {
+		color: #66ccff;
+	}
+
+	.peg-spiritualita {
+		color: #d9b3ff;
+	}
+
+	.peg-title {
+		margin-left: 1em;
 	}
 </style>
